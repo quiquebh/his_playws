@@ -1,0 +1,1 @@
+web: ./bin/fisio-repo -Dhttp.port=9000

@@ -1,0 +1,55 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.PublicationController.index()
+
+# Authors
+GET     /newAuthor                  controllers.AuthorController.index()
+POST    /author                     controllers.AuthorController.addAuthor()
+GET     /author/:id                 controllers.AuthorController.getAuthor(id: Long)
+GET     /author                     controllers.AuthorController.searchAuthors(name: String)
+GET     /authors                    controllers.AuthorController.getAuthors()
+GET     /authorsJSON                controllers.AuthorController.getAuthorsJson()
+
+# Sources
+GET     /newSource                  controllers.SourceController.index()
+POST    /source                     controllers.SourceController.addSource()
+GET     /source/:id                 controllers.SourceController.getSource(id: Long)
+GET     /source                     controllers.SourceController.searchSources(name: String)
+GET     /sources                    controllers.SourceController.getSources()
+GET     /sourcesJSON                controllers.SourceController.getSourcesJson()
+
+# Keywords
+GET     /newKeyword                 controllers.KeywordController.index()
+POST    /keyword                    controllers.KeywordController.addKeyword()
+GET     /keyword/:id                controllers.KeywordController.getKeyword(id: Long)
+GET     /keyword                    controllers.KeywordController.searchKeywords(name: String)
+GET     /keywords                   controllers.KeywordController.getKeywords()
+GET     /keywordsJSON               controllers.KeywordController.getKeywordsJson()
+
+# Publications
+GET     /newPublication             controllers.PublicationController.index()
+POST    /publication                controllers.PublicationController.addPublication()
+GET     /publication/:id            controllers.PublicationController.getPublication(id: Long)
+GET     /publication                controllers.PublicationController.searchPublications(title: String)
+GET     /publications               controllers.PublicationController.getPublications()
+GET     /publicationsJSON           controllers.PublicationController.getPublicationsJson()
+POST    /publicationJSON            controllers.PublicationController.addPublicationJson()
+
+# Publication Mappings
+GET     /publication/:id/author/:aid       controllers.PublicationController.addAuthor(id: Long, aid:Long)
+GET     /publication/:id/source/:sid       controllers.PublicationController.addSource(id: Long, sid:Long)
+GET     /publication/:id/keyword/:kid      controllers.PublicationController.addKeyword(id: Long, kid:Long)
+
+# Reviews
+GET     /newReview                  controllers.ReviewController.index()
+POST    /review                     controllers.ReviewController.addReview()
+GET     /review/:id                 controllers.ReviewController.getReview(id: Long)
+GET     /review                     controllers.ReviewController.searchReviews(publication: String)
+GET     /reviews                    controllers.ReviewController.getReviews()
+GET     /reviewsJSON                controllers.ReviewController.getReviewsJson()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
