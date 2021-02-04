@@ -1,0 +1,12 @@
+@(authors: List[models.Author])
+
+@main("Welcome to Fisio-Repo") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<ul id="authors">
+    @for(author <- authors) {
+    <li><a href="./author/@author.id">@author.name</a></li>
+    }
+</ul>
+
+}

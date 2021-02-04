@@ -1,0 +1,13 @@
+@()
+
+@main("Welcome to Fisio-Repo") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<form method="POST" action="@routes.AuthorController.addAuthor()">
+    @helper.CSRF.formField
+    Name: <input type="text" name="name"/><br />
+    Email: <input type="text" name="email"/><br />
+    Affiliation: <input type="text" name="affiliation"/><br />
+    <button>Add Author</button>
+</form>
+}

@@ -1,0 +1,18 @@
+@()
+
+@main("Welcome to Fisio-Repo") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<form method="POST" action="@routes.PublicationController.addPublication()">
+    @helper.CSRF.formField
+    Title: <input type="text" name="title"/><br />
+    Language: <input type="text" name="language"/><br />
+    Document Type: <input type="text" name="docType"/><br />
+    Abstract: <input type="text" name="docAbstract"/><br />
+    Year: <input type="number" name="year"/><br />
+    Volume: <input type="number" name="volume"/><br />
+    Start Page: <input type="number" name="startPage"/><br />
+    End Page: <input type="number" name="endPage"/><br />
+    <button>Add Publication</button>
+</form>
+}

@@ -1,0 +1,70 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-2.2.0.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+    <table border="1">
+        <tr>
+        <td><a href="/newPublication">New Publication</a></td>
+        <td><a href="/newAuthor">New Author</a></td>
+        <td><a href="/newSource">New Source</a></td>
+        <td><a href="/newKeyword">New Keyword</a></td>
+        <td><a href="/newReview">New Review</a></td>
+        </tr>
+        <tr>
+        <td><a href="/publications">List All Publications</a></td>
+        <td><a href="/authors">List All Authors</a></td>
+        <td><a href="/sources">List All Sources</a></td>
+        <td><a href="/keywords">List All Keywords</a></td>
+        <td><a href="/reviews">List All Reviews</a></td>
+        </tr>
+        <tr>
+        <td><a href="/publicationsJSON">List All Publications (JSON)</a></td>
+        <td><a href="/authorsJSON">List All Authors (JSON)</a></td>
+        <td><a href="/sourcesJSON">List All Sources (JSON)</a></td>
+        <td><a href="/keywordsJSON">List All Keywords (JSON)</a></td>
+        <td><a href="/reviewsJSON">List All Reviews (JSON)</a></td>
+        </tr>
+        <tr>
+        <td>
+        <form method="GET" action="/publication">
+        Title: <input type="text" name="title"/>
+        <input type="submit" value="Search">
+        </form>
+        </td>
+        <td>
+        <form method="GET" action="/author">
+        Name: <input type="text" name="name"/>
+        <input type="submit" value="Search">
+        </form>
+        </td>
+        <td>
+        <form method="GET" action="/source">
+        Name: <input type="text" name="name"/>
+        <input type="submit" value="Search">
+        </form>
+        </td>
+        <td>
+        <form method="GET" action="/keyword">
+        Name: <input type="text" name="name"/>
+        <input type="submit" value="Search">
+        </form>
+        </td>
+        <td>
+        <form method="GET" action="/review">
+        Publication: <input type="text" name="publication"/>
+        <input type="submit" value="Search">
+        </form>
+        </td>
+        </tr>
+    </table>
+    <br />
+        @content
+    </body>
+</html>

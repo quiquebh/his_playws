@@ -1,0 +1,12 @@
+@(publications: List[models.Publication])
+
+@main("Welcome to Fisio-Repo") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<ul id="publications">
+    @for(publication <- publications) {
+    <li><a href="./publication/@publication.id">@publication.title</a></li>
+    }
+</ul>
+
+}

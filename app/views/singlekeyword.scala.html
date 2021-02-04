@@ -1,0 +1,9 @@
+@(keyword: models.Keyword)
+
+@main("Welcome to Fisio-Repo") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<ul id="keyword">
+    <li>Name: @keyword.name</li>
+</ul>
+}

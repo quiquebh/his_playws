@@ -1,0 +1,12 @@
+@(keywords: List[models.Keyword])
+
+@main("Welcome to Fisio-Repo") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<ul id="keywords">
+    @for(keyword <- keywords) {
+    <li><a href="./keyword/@keyword.id">@keyword.name</a></li>
+    }
+</ul>
+
+}

@@ -1,0 +1,11 @@
+@()
+
+@main("Welcome to Fisio-Repo") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<form method="POST" action="@routes.KeywordController.addKeyword()">
+    @helper.CSRF.formField
+    Name: <input type="text" name="name"/><br />
+    <button>Add Keyword</button>
+</form>
+}

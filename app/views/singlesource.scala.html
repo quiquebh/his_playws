@@ -1,0 +1,10 @@
+@(source: models.Source)
+
+@main("Welcome to Fisio-Repo") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<ul id="sources">
+    <li>Name: @source.name</li>
+    <li>ISSN: @source.issn</li>
+</ul>
+}

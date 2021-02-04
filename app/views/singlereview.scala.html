@@ -1,0 +1,12 @@
+@(review: models.Review)
+
+@main("Welcome to Fisio-Repo") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<ul id="reviews">
+    <li>Title: @review.title</li>
+    <li>Review Author: @review.review_author</li>
+    <li>Publication: @review.publication</li>
+    <li>Body: @review.body</li>
+</ul>
+}

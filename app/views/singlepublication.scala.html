@@ -1,0 +1,40 @@
+@(publication: models.Publication)
+
+@main("Welcome to Fisio-Repo") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<ul id="publications">
+    <li>@publication.title</li>
+    @if(publication.authors != null) {
+        <li>
+            <ul>
+                @for(author <- publication.authors) {
+                <li>Name: @author.name</li>
+                <li>Email: @author.email</li>
+                <li>Affiliation: @author.affiliation</li>
+                }
+            </ul>
+        </li>
+    }
+    @if(publication.source != null) {
+        <li>Source: @publication.source.name</li>
+        <li>ISSN: @publication.source.issn</li>
+    }
+    <li>Language: @publication.language</li>
+    <li>Document Type: @publication.docType</li>
+    @if(publication.keywords != null) {
+        <li>
+            <ul>
+                @for(keyword <- publication.keywords) {
+                <li>Keyword: @keyword.name</li>
+                }
+            </ul>
+        </li>
+    }
+    <li>Abstract: @publication.docAbstract</li>
+    <li>Year: @publication.year</li>
+    <li>Volume: @publication.volume</li>
+    <li>Start Page: @publication.startPage</li>
+    <li>EndPage: @publication.endPage</li>
+</ul>
+}
